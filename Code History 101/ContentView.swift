@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let mainColor = Color(red: 20/225, green: 28/225, blue: 58/225);
+    @State var mainColor = Color(red: 20/225, green: 28/225, blue: 58/225);
     let accentColor = Color(red: 20/225, green: 105/225, blue: 240/225);
     let white = Color(red: 1, green: 1, blue: 1);
     
@@ -24,21 +24,15 @@ struct ContentView: View {
                 Text(question.questionText).font(.largeTitle).bold().multilineTextAlignment(.leading)
                 Spacer()
                 HStack{
-                    Button(action: {print("Tapped on choice 1")},
-                           label: {ChoiceTextView(choiceText: question.possibleAnswers[0])
-                    })
-                    
-                    Button(action: {print("Tapped on choice 2")},
-                           label: {ChoiceTextView(choiceText: question.possibleAnswers[1])
-                    })
-                    
-                    Button(action: {print("Tapped on choice 3")},
-                           label: {ChoiceTextView(choiceText: question.possibleAnswers[2])
-                    })
-                    
-                    Button(action: {print("Tapped on choice 4")},
-                           label: {ChoiceTextView(choiceText: question.possibleAnswers[3])
-                    })
+                    ForEach(0 ..< question.possibleAnswers.count){
+                        answerIndex in
+                        Button(action: {
+                          print("Tapped on option with the text: \(question.possibleAnswers[answerIndex])")
+                          mainColor = answerIndex == question.correctAnswerIndex ? .green : .red
+                        }) {
+                          ChoiceTextView(choiceText: question.possibleAnswers[answerIndex])
+                        }
+                    }
                 }
             }
         }.foregroundColor(.white)
