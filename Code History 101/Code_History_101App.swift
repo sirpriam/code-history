@@ -11,7 +11,7 @@ import SwiftUI
 struct Code_History_101App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WelcomeView()
         }
     }
 }
