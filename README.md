@@ -2,7 +2,12 @@
 
 # DESCRIPTION
 
-Sub title of the description
-----------------------------
+A simple quiz about code history project from Codecademy with **Swift**. 
+This project utilize some concepts of Swift including:
 
-A simple quiz about code history project from Codecademy with Swift. Utilizing Swift concept including structs, dictionaries, conditional checking, swiftUI, and other basic programming concept
+1. Structs
+2. Dictionaries
+3. Conditional
+4. SwiftUI
+5. Variable, Constant, Functions
+6. and much more...
