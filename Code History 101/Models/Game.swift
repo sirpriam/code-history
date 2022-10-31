@@ -36,6 +36,7 @@ struct Game {
         return count
     }
     
+    // MARK: mutating function
     mutating func makeGuessForCurrentQuestion(atIndex index: Int){
         guesses[currentQuestion] = index
     }
